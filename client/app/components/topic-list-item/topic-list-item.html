@@ -1,0 +1,12 @@
+<div class="row">
+  <!-- ICON -->
+  <div class="col-xs-2">
+    <img class="fit" ng-src="{{ topicListItemCtrl.topic.iconURL }}" alt="{{ topicListItemCtrl.topic.info }}" />
+  </div>
+  <!-- INFO -->
+  <div class="col-xs-10">
+    <h3>{{ topicListItemCtrl.topic.name}} <small>version {{ topicListItemCtrl.topic.version }}</small></h3>
+    <h4>{{ topicListItemCtrl.topic.info }}</h4>
+    <p>{{ topicListItemCtrl.topic.description }}</p>
+  </div>
+</div>

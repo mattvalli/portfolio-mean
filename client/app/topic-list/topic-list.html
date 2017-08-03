@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-info">
+        <!-- HEADING -->
+        <div class="panel-heading">
+          <h2 class="no-margin">Topics</h2>
+        </div>
+        <!-- BODY -->
+        <div class="panel-body">
+            <div ng-repeat="topic_instance in topicListCtrl.topics">
+              <a ui-sref=".topic({ topic_id: topic_instance.ui_id })">
+                <topic-list-item topic="topic_instance"></topic>
+              </a>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <div class="footer">
+          <!-- Coming soon - Related Topics -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
