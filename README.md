@@ -1,6 +1,11 @@
-# project
+# porfolio-mean
+## Matt Valli's portfolio developed with MEAN using AngularJS 1.6.x
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.2.2.
+Good projects start with a solid foundation and well defined structure, practices and conventions.
+
+I chose to use Yeoman, Gulp, and Bower to assist me through the development process using the following Yeoman Generator:
+
+[Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.2.2.
 
 ## Getting Started
 
