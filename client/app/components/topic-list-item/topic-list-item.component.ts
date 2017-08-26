@@ -1,7 +1,7 @@
 'use strict';
 const angular = require('angular');
 
-export class topicListItemComponent {
+export class TopicListItemComponent {
   // PROPERTIES
   topic;
   /*@ngInject*/
@@ -10,7 +10,7 @@ export class topicListItemComponent {
   }
 
   $onInit() {
-    console.log("topic-list-item.topic", this.topic);
+    console.log('topic-list-item.topic', this.topic);
   }
 }
 
@@ -18,7 +18,7 @@ export default angular.module('projectApp.topic-list-item', [])
   .component('topicListItem', {
     template: require('./topic-list-item.html'),
     bindings: { topic: '<' },
-    controller: topicListItemComponent,
+    controller: TopicListItemComponent,
     controllerAs: 'topicListItemCtrl'
   })
   .name;

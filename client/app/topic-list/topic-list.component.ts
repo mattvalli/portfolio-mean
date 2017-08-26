@@ -12,17 +12,21 @@ export class TopicListComponent {
   /*@ngInject*/
   constructor(
     // Angular
+    $window,
     $http,
     // Third Party
     $state
   ) {
-    console.log("(state)", $state.current.name);
-    $http.get('http://localhost:3000/api/topics').then(
+    console.log('(state)', $state.current.name);
+    $http.get('http://localhost:3000/api/topics/').then(
       res => {
         this.topics = res.data;
+        console.log('PRE-Underscore', res.data);
+        this.topics = $window._.orderBy(res.data, ['ui_id'], ['asc']);
+        console.log('Sorted Topics', this.topics);
       },
       err => {
-        console.error("Something went wrong requesting Topics", err);
+        console.error('Something went wrong requesting Topics', err);
       }
     );
   }
@@ -38,7 +42,7 @@ export default angular.module('projectApp.topic-list',
 ])
   .config(routes)
   .component('topicList', {
-    template: require('./topic-list.html'),
+    template: require('./topic-list.list-group.html'),
     controller: TopicListComponent,
     controllerAs: 'topicListCtrl'
   })

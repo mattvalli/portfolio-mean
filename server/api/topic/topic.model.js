@@ -9,6 +9,9 @@ var TopicSchema = new mongoose.Schema({
   info: String,
   description: String,
   version: String,
+  version_major: Number,
+  version_minor: Number,
+  version_patch: Number,
   iconURL: String,
   active: Boolean,
   isFavorite: Boolean

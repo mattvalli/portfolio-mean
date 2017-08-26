@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+        <h2>Topics</h2>
+          <!-- Controls -->
+          <div class="form">
+            <!-- Name Filter -->
+            <div class="form-group">
+              <label for="search-name">Filter</label>
+              <input type="text"
+                      class="form-control"
+                      id="search-name"
+                      name="search-name"
+                      ng-model="search.name"
+                      placeholder="Filter by Name"
+            </div>
+          </div>
+          <!-- List Items -->
+          <div class="list-group">
+            <a class="list-group-item"
+                ng-repeat="topic in topicListCtrl.topics | filter:search"
+                ui-sref=".topic({ ui_id: topic.ui_id })">
+                <!-- ICON -->
+                <div class="text-center">
+                  <img ng-src="{{ topic.iconURL }}" alt="{{ topic.info }}" />
+                </div>
+                <!-- INFO -->
+                <div>
+                  <h3>{{ topic.name}} <small class="pull-right">version {{ topic.version }}</small></h3>
+                  <h4>{{ topic.info }}</h4>
+                  <p>{{ topic.description }}</p>
+                </div>
+            </a>
+          </div>
+    </div>
+  </div>
+</div>

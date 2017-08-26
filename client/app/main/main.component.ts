@@ -2,16 +2,30 @@ const angular = require('angular');
 const uiRouter = require('angular-ui-router');
 import routing from './main.routes';
 
+// CONSTANTS
+const ENDPOINT_INIT = 'http://localhost:3000/api/topics/favorites/true';
+
 export class MainController {
   $http;
-
+  topics;
   awesomeThings = [];
   newThing = '';
 
   /*@ngInject*/
-  constructor($http) {
+  constructor(
+    // Angular
+    $window,
+    $http
+  ) {
     this.$http = $http;
-
+    $http.get(ENDPOINT_INIT).then(
+      res => {
+        this.topics = $window._.orderBy(res.data, ['ui_id'], ['asc']);
+      },
+      err => {
+        console.error('Something went wrong requesting Topics', err);
+      }
+    );
   }
 
   $onInit() {

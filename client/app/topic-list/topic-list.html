@@ -9,7 +9,7 @@
         <!-- BODY -->
         <div class="panel-body">
             <div ng-repeat="topic_instance in topicListCtrl.topics">
-              <a ui-sref=".topic({ topic_id: topic_instance.ui_id })">
+              <a ui-sref=".topic({ ui_id: topic_instance.ui_id })">
                 <topic-list-item topic="topic_instance"></topic>
               </a>
             </div>

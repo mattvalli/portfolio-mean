@@ -3,47 +3,15 @@
     <h1>Web Development<br>with JavaScript<br>since 2011</h1>
     <p class="lead">Tools are important...<br>These are my favorites</p>
     <div class="row">
-      <!-- ANGULAR -->
-      <a ui-sref="topic-list.topic({ topic_id: 'angular' })">
-      <img class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
-            src="assets/images/png/angular.png"
-            alt="I'm Angular">
-      </a>
+      <!-- Favorite Topics -->
+      <div class="col-lg-3 col-md-4 col-sm-6"
+            ng-repeat="topic in $ctrl.topics">
+        <a ui-sref="topic-list.topic({ ui_id: '{{ topic.ui_id }}' })">
+        <img src="{{ topic.iconURL }}"
+              alt="{{ topic.name }}">
+        </a>
+      </div>
 
-      <!-- EXPRESS -->
-      <a ui-sref="topic-list.topic({ topic_id: 'express' })">
-      <img class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
-            src="assets/images/png/express.png"
-            alt="I'm Express">
-      </a>
-
-      <!-- NODE -->
-      <a ui-sref="topic-list.topic({ topic_id: 'node' })">
-      <img class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
-            src="assets/images/png/node.png"
-            alt="I'm Node">
-      </a>
-
-      <!-- MONGO -->
-      <a ui-sref="topic-list.topic({ topic_id: 'mongo' })">
-      <img class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
-            src="assets/images/png/mongoDB.png"
-            alt="I'm MongoDB">
-      </a>
-
-      <!-- YEOMAN -->
-      <a ui-sref="topic-list.topic({ topic_id: 'yeoman' })">
-      <img class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
-            src="assets/images/png/yeoman.png"
-            alt="I'm Yeoman">
-      </a>
-
-      <!-- YEOMAN -->
-      <a ui-sref="topic-list.topic({ topic_id: 'auth0' })">
-      <img class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
-            src="assets/images/png/auth0.png"
-            alt="I'm Auth0">
-      </a>
     </div>
   </div>
 </header>

@@ -2,11 +2,11 @@
   <div class="panel panel-info">
     <!-- HEADING -->
     <div class="panel-heading">
-      <h2 class="no-margin">{{ topicCtrl._id }}</h2>
+      <h2 class="no-margin">{{ topicCtrl.topic.name }} <small>{{ topicCtrl.topic.version }}</small></h2>
     </div>
     <!-- BODY -->
     <div class="panel-body">
-      <p>{{ topicCtrl.description }}</p>
+      <p>{{ topicCtrl.topic.description }}</p>
     </div>
     <!-- FOOTER -->
   </div>

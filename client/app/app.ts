@@ -11,7 +11,6 @@ const uiRouter = require('angular-ui-router');
 const uiBootstrap = require('angular-ui-bootstrap');
 
 
-
 import {routeConfig} from './app.config';
 
 // Structural Components
@@ -24,9 +23,10 @@ import util from '../components/util/util.module';
 import './app.less';
 
 // Page Components
+import TopicComponent from './topic/topic.component';
 import TopicListComponent from './topic-list/topic-list.component';
 import TopicListItemComponent from './components/topic-list-item/topic-list-item.component';
-import TopicComponent from './topic/topic.component';
+import TopicFormComponent from './topic-form/topic-form.component';
 import ExperienceComponent from './experience/experience.component';
 
 angular.module('projectApp', [
@@ -44,9 +44,10 @@ angular.module('projectApp', [
   constants,
 
   // Components
+  TopicComponent,
   TopicListComponent,
   TopicListItemComponent,
-  TopicComponent,
+  TopicFormComponent,
   ExperienceComponent,
   //AboutModule,
 
@@ -54,7 +55,11 @@ angular.module('projectApp', [
   util
 ])
   .config(routeConfig)
-;
+  // Add Lodash as a Service
+	.factory('_',
+		function($window) {
+			return $window._; // assumes underscore has already been loaded on the page
+	});
 
 angular
   .element(document)
